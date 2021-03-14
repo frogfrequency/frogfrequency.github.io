@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess_v1_redesign</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="initialize()">
+    <div id="container"></div>
+    <div id="overlay-container"></div>
+    <button id="test-function-button">call testFunction</button>
+    <button id="test-function-button2">call second testFunction</button>
+    <button id="refresh-button">refreshBoard()</button>
+    <button id="logGameArr-button">logGameArr()</button>
+    <br>
+    <br>
+    <div id="white-promotion-container" class="promotion-container"></div>
+    <div id="black-promotion-container" class="promotion-container"></div>
+    <script src="./javascript/display.js"></script>
+    <script src="./javascript/pieceMovement.js"></script>
+    <script src="./javascript/main.js"></script>
+</body>
+</html>

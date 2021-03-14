@@ -1,0 +1,36 @@
+body {
+    background-color: rgba(0, 0, 0, 0.876);
+  }
+
+#container {
+    border-style: solid;
+    width: 640px; /* 8x80px + 8x2*2px border */
+    height: 640px;
+    font-size: 0;
+}
+
+.square {
+    background-color: red;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+}
+
+.white-square{
+    background-color: lemonchiffon;
+}
+
+.black-square{
+    background-color: grey;
+}
+
+#container :hover{
+    background-color: orange;
+}
+
+.promotion-container {
+    background-color: orange;
+    width: 320px;
+    height: 80px;
+    display: none;
+}
