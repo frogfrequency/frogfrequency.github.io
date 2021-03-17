@@ -7,7 +7,7 @@ let castleParameters = [true, true, true, true, true, true,] // aRook, King, hRo
 
 function returnLegalMoves(id, color, piece, arr) {
     // console.log(`returnLegalMoves is called with: ${id} , ${color} , ${piece}`);
-    returnLegalMovesOutput = returnTakeMoves(id, color, piece, gameArr);
+    let returnLegalMovesOutput = returnTakeMoves(id, color, piece, gameArr);
     if (piece === 'P') {
         let pawnMoveMoves = returnPawnMoveMoves(id, color, arr);
         returnLegalMovesOutput.push(...pawnMoveMoves)
@@ -17,8 +17,36 @@ function returnLegalMoves(id, color, piece, arr) {
         returnLegalMovesOutput.push(...castleMoves)
     }
     // console.log('returnLegalMovesOutput: ' + returnLegalMovesOutput);
+
+    returnLegalMovesOutput = returnLegalMovesOutput.filter(function (element) {
+        return element != null;
+      });
+
+    returnLegalMovesOutput = returnFilteredForIllegalMate(returnLegalMovesOutput, id, color, piece, arr);
     return returnLegalMovesOutput
 }
+
+
+function returnFilteredForIllegalMate(moveSetArr, moverOriginID, moverColor, moverPiece, arr) {
+    let returnFilteredForIllegalMateOutput = [];
+    console.log(`returnFilteredForIllegalMate receives: (moveSetArr, moverOriginID, moverColor, moverPiece, arr*)' ${moveSetArr} ${moverOriginID} ${moverColor} ${moverPiece}`);
+    for (let k=0; k<moveSetArr.length; k++) {
+        let moveToCheckID = moveSetArr[k];
+        console.log('moveToCheckID: ' + moveToCheckID);
+        let potentialNewGameArr = [...gameArr];
+        potentialNewGameArr[moveToCheckID] = potentialNewGameArr[moverOriginID];
+        potentialNewGameArr[moverOriginID] = undefined;
+        let observerColor = returnOppositeColor(returnColor(moverColor));
+        // console.log(`the obeservercolor: ${observerColor}`);
+        let observedByOpposition = returnObservedBy(observerColor, potentialNewGameArr);
+        if (includesNoImmediateKingCaptures(observedByOpposition, moverColor, potentialNewGameArr)) {
+            returnFilteredForIllegalMateOutput.push(moveToCheckID)
+        }
+
+    }   
+    return returnFilteredForIllegalMateOutput
+}
+
 
 
 function returnTakeMoves(id, color, piece, arr) {

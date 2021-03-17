@@ -104,10 +104,7 @@ function makeMove(cID, movesFor) {
     potentialNewGameArr[cID] = potentialNewGameArr[movesFor];
     potentialNewGameArr[movesFor] = undefined;
     let moverColor = returnColor(potentialNewGameArr[cID]);
-    let observerColor = returnOppositeColor(returnColor(moverColor));
-    // console.log(`the observerColor is: ${observerColor}`);
-    let observedByOpposition = returnObservedBy(observerColor, potentialNewGameArr);
-    if (includesNoImmediateKingCaptures(observedByOpposition, moverColor, potentialNewGameArr)) {
+
         specialCaseEnPassantID = returnEnPassantID(cID, movesFor, moverColor, potentialNewGameArr);
         performCastleIfNeeded(cID, movesFor, potentialNewGameArr);
         updateCastleParameters(movesFor);
@@ -116,7 +113,7 @@ function makeMove(cID, movesFor) {
         refreshBoard();
         colorizeBlue(specialCaseEnPassantID);
         halfMoveCounter++;
-    }
+
 
 }
 
