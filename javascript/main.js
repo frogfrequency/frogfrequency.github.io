@@ -40,6 +40,22 @@ let normalTestArr = [
     ,,,,,,,,,,,,,,,,,,,,,,
 ];
 
+let gameOverTestArr = [
+    ,,,,,,,,,,,,,,,,,,
+    ,,,         ,,,,'bKi',,,
+    ,,,         ,,,,,,,     
+    ,,,         ,,,,,,,     
+    ,,,         ,,,,,'wKi',,
+    ,,,         ,,,,,,,
+    ,,,         ,,,,,,,
+    ,,,         ,,,,,,,
+    ,,,         ,,,,'wQ',,,
+    ,,,,,,,,,,,,,,,,,,,,,,
+];
+
+
+
+
 let gameNotFreezed = true;
 
 let specialCaseEnPassantID = 0;
@@ -112,8 +128,48 @@ function makeMove(cID, movesFor) {
         performPromotionIfNeeded(cID, potentialNewGameArr);
         refreshBoard();
         colorizeBlue(specialCaseEnPassantID);
+        gameOverCheck();
         halfMoveCounter++;
+}
 
+function gameOverCheck() {
+    console.log(`----------------- inside gameOverCheck --------------------\n`);
+    let colorJustMoved = colorToMove();
+    let otherColor = returnOppositeColor(colorJustMoved);
+    console.log('color that just moved: ' + colorJustMoved);
+    console.log('opposite Color: ' + otherColor);
+    // define all possible moves for the opposite color
+    let otherColorAllMoves = [];
+    let otherColorKingPosition = [];
+
+    for (let i=21; i<99; i++) {
+        let currentFieldContent = gameArr[i];
+        let currentFieldColor = returnColor(currentFieldContent);
+        let currentFieldPiece = returnPiece(currentFieldContent);
+        if (currentFieldContent !== undefined && currentFieldColor === otherColor) {
+                if (currentFieldPiece === 'Ki') { // finding the king to use its position later
+                    otherColorKingPosition.push(i);
+                }
+                let innerOutput = returnLegalMoves(i, currentFieldColor, currentFieldPiece, gameArr);
+                if (innerOutput !== undefined) {
+                    otherColorAllMoves.push(...innerOutput);
+                }
+        } 
+    }
+    console.log('the otherColorAllMoves Total is: ' + otherColorAllMoves);
+    console.log('its length is: ' + otherColorAllMoves.length);
+    console.log(`the king position is: ${otherColorKingPosition}`);
+    if (otherColorAllMoves.length < 1) {
+        if (fieldsAreNotAttacked(otherColorKingPosition, colorJustMoved, gameArr)) {
+            refreshBoard();
+            setTimeout(function() {alert('stalemate!');},10);
+        } else {
+            refreshBoard();
+            setTimeout(function() {alert(`checkmate ${colorJustMoved} won!!`);},10);
+        }
+    }
+    // if king in check --> checkmate else draw
+    console.log(`\n------------------------------------------------------------`);
 
 }
 
@@ -226,22 +282,22 @@ function returnEnPassantID(cID, movesFor, moverColor, arr) {
 function updateCastleParameters(id) {
     switch(id) {
         case 21:
-            castleParameters[0] = true;
+            castleParameters[3] = false;
             break;
         case 25:
-            castleParameters[1] = true;
+            castleParameters[4] = false;
             break;
         case 28:
-            castleParameters[2] = true;
+            castleParameters[5] = false;
             break;
         case 91:
-            castleParameters[3] = true;
+            castleParameters[0] = false;
             break;
         case 95:
-            castleParameters[4] = true;
+            castleParameters[1] = false;
             break;
         case 98:
-            castleParameters[5] = true;
+            castleParameters[2] = false;
             break;
         default:
             break;
@@ -334,7 +390,7 @@ function testFunction() {
 document.getElementById('test-function-button2').addEventListener('click', testFunction2);
 
 function testFunction2() {
-    console.log(returnPiece(gameArr[95]));
+    console.log(castleParameters);
 };
 
 document.getElementById('refresh-button').addEventListener('click', refreshBoard);

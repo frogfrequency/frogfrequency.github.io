@@ -42,7 +42,6 @@ function returnFilteredForIllegalMate(moveSetArr, moverOriginID, moverColor, mov
         if (includesNoImmediateKingCaptures(observedByOpposition, moverColor, potentialNewGameArr)) {
             returnFilteredForIllegalMateOutput.push(moveToCheckID)
         }
-
     }   
     return returnFilteredForIllegalMateOutput
 }
