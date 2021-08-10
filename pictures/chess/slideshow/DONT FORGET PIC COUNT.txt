@@ -1,0 +1,3 @@
+dont forget to update the pic count for the according project in:
+
+C:\Users\Marcel\Coding\react\react-portfolio\src\projects.js
