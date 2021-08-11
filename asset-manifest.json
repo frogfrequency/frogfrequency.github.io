@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.c67e5d7c.chunk.css",
-    "main.js": "/static/js/main.6520c157.chunk.js",
-    "main.js.map": "/static/js/main.6520c157.chunk.js.map",
+    "main.js": "/static/js/main.eee70798.chunk.js",
+    "main.js.map": "/static/js/main.eee70798.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.713032a5.js",
     "runtime-main.js.map": "/static/js/runtime-main.713032a5.js.map",
     "static/css/2.6cd54866.chunk.css": "/static/css/2.6cd54866.chunk.css",
@@ -13,13 +13,17 @@
     "index.html": "/index.html",
     "static/css/2.6cd54866.chunk.css.map": "/static/css/2.6cd54866.chunk.css.map",
     "static/css/main.c67e5d7c.chunk.css.map": "/static/css/main.c67e5d7c.chunk.css.map",
-    "static/js/2.459a6584.chunk.js.LICENSE.txt": "/static/js/2.459a6584.chunk.js.LICENSE.txt"
+    "static/js/2.459a6584.chunk.js.LICENSE.txt": "/static/js/2.459a6584.chunk.js.LICENSE.txt",
+    "static/media/aoc_hovered.3952244c.png": "/static/media/aoc_hovered.3952244c.png",
+    "static/media/aoc_unhovered.21b8b77a.png": "/static/media/aoc_unhovered.21b8b77a.png",
+    "static/media/chess_hovered.9731d7ff.png": "/static/media/chess_hovered.9731d7ff.png",
+    "static/media/chess_unhovered.347e524e.png": "/static/media/chess_unhovered.347e524e.png"
   },
   "entrypoints": [
     "static/js/runtime-main.713032a5.js",
     "static/css/2.6cd54866.chunk.css",
     "static/js/2.459a6584.chunk.js",
     "static/css/main.c67e5d7c.chunk.css",
-    "static/js/main.6520c157.chunk.js"
+    "static/js/main.eee70798.chunk.js"
   ]
 }
