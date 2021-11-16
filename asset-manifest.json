@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.7f52c766.chunk.css",
-    "main.js": "/static/js/main.84d170c9.chunk.js",
-    "main.js.map": "/static/js/main.84d170c9.chunk.js.map",
+    "main.css": "/static/css/main.03ca2f32.chunk.css",
+    "main.js": "/static/js/main.488dff72.chunk.js",
+    "main.js.map": "/static/js/main.488dff72.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.9cf7940a.js",
     "runtime-main.js.map": "/static/js/runtime-main.9cf7940a.js.map",
     "static/css/2.6cd54866.chunk.css": "/static/css/2.6cd54866.chunk.css",
-    "static/js/2.29d60335.chunk.js": "/static/js/2.29d60335.chunk.js",
-    "static/js/2.29d60335.chunk.js.map": "/static/js/2.29d60335.chunk.js.map",
+    "static/js/2.43c0c73a.chunk.js": "/static/js/2.43c0c73a.chunk.js",
+    "static/js/2.43c0c73a.chunk.js.map": "/static/js/2.43c0c73a.chunk.js.map",
     "static/js/3.ca13ea61.chunk.js": "/static/js/3.ca13ea61.chunk.js",
     "static/js/3.ca13ea61.chunk.js.map": "/static/js/3.ca13ea61.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.6cd54866.chunk.css.map": "/static/css/2.6cd54866.chunk.css.map",
-    "static/css/main.7f52c766.chunk.css.map": "/static/css/main.7f52c766.chunk.css.map",
-    "static/js/2.29d60335.chunk.js.LICENSE.txt": "/static/js/2.29d60335.chunk.js.LICENSE.txt",
+    "static/css/main.03ca2f32.chunk.css.map": "/static/css/main.03ca2f32.chunk.css.map",
+    "static/js/2.43c0c73a.chunk.js.LICENSE.txt": "/static/js/2.43c0c73a.chunk.js.LICENSE.txt",
     "static/media/AlgorithmenKompaktUndVerstaendlich.29de9da3.png": "/static/media/AlgorithmenKompaktUndVerstaendlich.29de9da3.png",
     "static/media/BeingHumanInTheAgeOfAlgorithms.6c9afe2a.png": "/static/media/BeingHumanInTheAgeOfAlgorithms.6c9afe2a.png",
     "static/media/HandbuchFuerSoftwareentwickler.ede74052.png": "/static/media/HandbuchFuerSoftwareentwickler.ede74052.png",
+    "static/media/ModernesSoftwareEngineering.fa50b956.png": "/static/media/ModernesSoftwareEngineering.fa50b956.png",
     "static/media/aoc_1.0bd6546e.png": "/static/media/aoc_1.0bd6546e.png",
     "static/media/aoc_2.87bac873.png": "/static/media/aoc_2.87bac873.png",
     "static/media/aoc_3.98b2c54e.png": "/static/media/aoc_3.98b2c54e.png",
@@ -59,8 +60,8 @@
   "entrypoints": [
     "static/js/runtime-main.9cf7940a.js",
     "static/css/2.6cd54866.chunk.css",
-    "static/js/2.29d60335.chunk.js",
-    "static/css/main.7f52c766.chunk.css",
-    "static/js/main.84d170c9.chunk.js"
+    "static/js/2.43c0c73a.chunk.js",
+    "static/css/main.03ca2f32.chunk.css",
+    "static/js/main.488dff72.chunk.js"
   ]
 }
